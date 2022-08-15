@@ -21,43 +21,43 @@ Api для сайта Yatube.
 
 Клонировать репозиторий и перейти в него в командной строке:
 
-```
+``` bash
 git clone git@github.com:vBaMnup/api_final_yatube.git
 ```
 
-```
+```bash
 cd api_final_yatube
 ```
 
 Cоздать и активировать виртуальное окружение:
 
-```
+``` bash
 python3 -m venv venv
 ```
 
-```
+``` bash
 source venv/bin/activate
 ```
 
-```
+``` bash
 python3 -m pip install --upgrade pip
 ```
 
 Установить зависимости из файла requirements.txt:
 
-```
+``` bash
 pip install -r requirements.txt
 ```
 
 Выполнить миграции:
 
-```
+``` bash
 python3 manage.py migrate
 ```
 
 Запустить проект:
 
-```
+``` bash
 python3 manage.py runserver
 ```
 ### Примеры использования:
@@ -69,7 +69,7 @@ python3 manage.py runserver
 ```
 /api/v1/posts/
 ```
-```
+``` json
 {
   "text": "string",
   "image": "string",

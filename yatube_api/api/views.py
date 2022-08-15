@@ -25,7 +25,7 @@ class PostViewSet(viewsets.ModelViewSet):
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    permission_classes = (permissions.AllowAny,)
 
 
 class CommentViewSet(viewsets.ModelViewSet):
@@ -50,3 +50,6 @@ class FollowViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Follow.objects.filter(user=self.request.user)
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
